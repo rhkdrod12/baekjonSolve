@@ -1,0 +1,26 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		Pattern pt;
+		Matcher mt;
+		
+		int t;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		t = sc.nextInt();
+		
+		while(t-- > 0) {
+			String code = sc.next();
+		}
+		
+		
+	}
+}

@@ -1,0 +1,21 @@
+package programmers;
+
+public class diskController {
+	public static void main(String[] args) {
+
+		int job[][] = {{0,3},{1,9},{2,6}};
+		
+		new diskCtlSoultion().solution(jobs);
+	}
+}
+
+class diskCtlSoultion{
+	public int solution(int[][] jobs) {
+		int answer = 0;
+		
+		
+		
+		
+		return answer;
+	}
+}

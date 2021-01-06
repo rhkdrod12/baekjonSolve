@@ -1,0 +1,42 @@
+package programmers;
+
+import java.util.PriorityQueue;
+
+public class diskController {
+	public static void main(String[] args) {
+
+		int jobs[][] = {{0,3},{4,9},{6,6}};
+		
+		new diskCtlSoultion().solution(jobs);
+	}
+}
+
+class diskCtlSoultion{
+	public int solution(int[][] jobs) {
+
+		int answer =  jobs[0][1];
+		int finExec = jobs[0][1];
+
+		PriorityQueue<int[]> readyQueue = new PriorityQueue<int[]>((a,b)->((a[1] - a[0]) - (b[1] - b[0])));
+		PriorityQueue<int[]> waitQueue = new PriorityQueue<int[]>((a,b)->(a[0] - b[0]));
+
+		//	{{0,3},{4,9},{6,6}};
+		//  요청시간부터 걸리는 시간은
+		//  요청부터 종료까지 걸린 시간 : 진행시간(finExec) + 작업시간(jobs[][1])- 요청시간(jobs[][0]);
+		
+		for(int i = 1 ; i < jobs.length; i++) {
+			waitQueue.add(jobs[i]);
+		}
+
+		while(!waitQueue.isEmpty()) {
+			if(waitQueue.peek()[0] <= finExec) {
+				
+			}
+			
+		}
+		System.out.println(answer);
+		return answer/3;
+	}
+
+
+}

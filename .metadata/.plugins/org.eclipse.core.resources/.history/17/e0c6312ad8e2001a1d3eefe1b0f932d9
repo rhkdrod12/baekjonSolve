@@ -1,0 +1,28 @@
+import java.util.Scanner;
+import java.util.regex.Matcher;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		Pattern pt;
+		Matcher mt;
+		
+		int t;
+		
+		Scanner sc = new Scanner(System.in);
+		
+		t = sc.nextInt();
+		
+		while(t-- > 0) {
+			
+			String code = sc.next();
+			
+			pt = java.util.regex.Pattern
+			
+		}
+		
+		
+	}
+}

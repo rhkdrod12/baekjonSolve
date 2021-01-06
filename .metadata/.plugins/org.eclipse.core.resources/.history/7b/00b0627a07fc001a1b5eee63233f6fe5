@@ -1,0 +1,83 @@
+package programmers;
+
+import java.util.ArrayList;
+import java.util.Collections;
+
+public class WordsChange {
+   public static void main(String[] args) {
+
+      String begin = "hit";
+      String target = "cog";
+
+      String[] words = { "hot", "dot", "dog", "lot", "log", "cog" };
+
+      System.out.println(new WordsChangeSolution().solution(begin, target, words));
+
+   }
+}
+
+class WordsChangeSolution {
+
+   ArrayList<Integer> list = new ArrayList<Integer>();
+
+   public int solution(String begin, String target, String[] words) {
+
+      int answer = 0;
+      
+      if(!containWord(target, words)) return answer;
+      
+      boolean[] visited = new boolean[words.length];
+      
+      bfs(begin, target, words, visited, 0);
+      
+      if (list.size() > 0) {
+         answer = Collections.min(list);
+      }
+      
+      return answer;
+
+   }
+//   { "hot", "dot", "dog", "lot", "log", "cog" };
+   void bfs(String begin, String target, String[] words, boolean[] visited, int sum) {
+      
+      if (begin.equals(target)) {
+         list.add(sum);
+      }
+      
+      for (int i = 0; i < words.length; i++) {
+         boolean[] visitedTemp = visited.clone();
+         if (!visitedTemp[i] && compareWord(words[i], begin)) {
+//            System.out.printf("begin: %s words: %s sum: %d i: %d\n", begin, words[i], sum, i);
+            visitedTemp[i] = true;
+            bfs(words[i], target, words, visitedTemp, sum + 1);
+         }
+      }
+   }
+   
+   boolean containWord(String target, String[] words) {
+      
+      for(int i = 0 ; i < words.length ; i++) {
+         if(target.equals(words[i])) {
+            return true;
+         }
+      }
+      return false;
+   }
+   
+   boolean compareWord(String begin, String target) {
+      
+      
+      for (int i = 0; i < begin.length(); i++) {
+         
+         
+         if ((begin.substring(0, i) + begin.substring(i + 1, begin.length()))
+               .contains(target.substring(0, i) + target.substring(i + 1, target.length()))) {
+            System.out.println(begin.substring(0, i) + begin.substring(i + 1, begin.length()));
+            System.out.println(target.substring(0, i) + target.substring(i + 1, target.length()));
+            return true;
+         }
+      }
+      return false;
+   }
+
+}

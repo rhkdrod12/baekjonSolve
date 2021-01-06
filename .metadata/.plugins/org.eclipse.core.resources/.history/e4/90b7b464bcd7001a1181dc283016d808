@@ -1,0 +1,12 @@
+import java.util.ArrayList;
+
+public class Node {	
+	int[] state;
+	int[] pre = null;
+	int total;	
+	
+	ArrayList<Node> st;
+	ArrayList<Node> pr;
+	
+	
+}

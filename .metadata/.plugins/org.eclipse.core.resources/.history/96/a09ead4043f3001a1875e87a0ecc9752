@@ -1,0 +1,24 @@
+package programmers;
+
+public class DoublePriority {
+
+	public static void main(String[] args) {
+		String[] operations = {"I 16","D 1"};
+		
+		new DoublePrioritySolution().solution(operations);
+	}
+}
+
+class DoublePrioritySolution{
+
+	public int[] solution(String[] operations) {
+		int[] answer = {};
+		
+		
+		
+		
+		
+		return answer;
+	}
+
+}

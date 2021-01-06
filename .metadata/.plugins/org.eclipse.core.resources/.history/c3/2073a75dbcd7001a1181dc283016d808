@@ -1,0 +1,6 @@
+
+public class Node {	
+	int[] state;
+	int[] pre = null;
+	int total;	
+}

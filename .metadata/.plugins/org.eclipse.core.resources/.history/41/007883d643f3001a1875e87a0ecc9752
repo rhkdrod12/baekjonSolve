@@ -1,0 +1,38 @@
+package programmers;
+
+import java.util.ArrayList;
+import java.util.PriorityQueue;
+
+public class DoublePriority {
+
+	public static void main(String[] args) {
+		String[] operations = {"I 16","D 1"};
+		
+		new DoublePrioritySolution().solution(operations);
+	}
+}
+
+class DoublePrioritySolution{
+
+	public int[] solution(String[] operations) {
+		int[] answer = {};
+		
+		PriorityQueue<Integer> val = new PriorityQueue<Integer>();
+		
+		
+		for(int i = 0 ; i < operations.length ; i++) {
+			String[] tmp = operations[i].split(" ");
+			
+			if(tmp[0].contains("I")) {
+				val.offer(Integer.parseInt(tmp[1]));
+			}
+			else if(tmp[1].contains("1")){
+				val.poll();
+			}
+		}
+		
+		
+		return answer;
+	}
+
+}

@@ -1,0 +1,29 @@
+package programmers;
+
+import java.util.ArrayList;
+
+public class DoublePriority {
+
+	public static void main(String[] args) {
+		String[] operations = {"I 16","D 1"};
+		
+		new DoublePrioritySolution().solution(operations);
+	}
+}
+
+class DoublePrioritySolution{
+
+	public int[] solution(String[] operations) {
+		int[] answer = {};
+		
+		ArrayList<String> order = new ArrayList<String>();
+		
+		for(int i = 0 ; i < operations.length ; i++) {
+				
+		}
+		
+		
+		return answer;
+	}
+
+}

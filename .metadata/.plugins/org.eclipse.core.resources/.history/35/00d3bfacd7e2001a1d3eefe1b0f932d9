@@ -1,0 +1,17 @@
+import java.util.regex.Matcher;
+
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		Pattern pt;
+		Matcher mt;
+		
+		
+		
+		
+	}
+}

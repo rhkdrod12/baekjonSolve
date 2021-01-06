@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename package &apos;Q1003.example&apos; to &apos;Q1003.fibonacci&apos;&#x0D;&#x0A;- Original project: &apos;Q1003&apos;&#x0D;&#x0A;- Original element: &apos;Q1003/src/Q1003.example&apos;&#x0D;&#x0A;- Renamed element: &apos;Q1003/src/Q1003.fibonacci&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename package &apos;Q1003.example&apos;" flags="589830" hierarchical="false" id="org.eclipse.jdt.ui.rename.package" input="/src&lt;Q1003.example" name="Q1003.fibonacci" qualified="false" references="true" stamp="1593869863323" textual="false" version="1.0"/>
+</session>

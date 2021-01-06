@@ -1,0 +1,92 @@
+package Q1005.acm;
+
+import java.net.Inet4Address;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Acm {
+
+	
+	public static void main(String[] args) {
+		
+		int t, n, k;
+		int x, y, w;
+
+		
+		Scanner sc = new Scanner(System.in);
+		
+		System.out.println("[ют╥б]");
+		
+		
+		t = sc.nextInt();
+		
+		for(int i = 0; i < t; i++) {
+						
+			n = sc.nextInt();
+			k = sc.nextInt();
+			
+			Buliding bl[] = new Buliding[n];
+			
+			
+			for(int j = 0; j  < n ; j++) {
+				bl[j].time = sc.nextInt();					
+			}
+			
+			for(int j = 0; j < k ; j++) {
+				x = sc.nextInt();
+				y = sc.nextInt();
+				
+				if(x > n || y > n) {
+					System.out.println("error");
+					return;
+				}
+				
+				bl[y].preBulid.add(x);
+				bl[x].lastBulid.add(y);
+				
+			}			
+			
+		
+			int sp = 1;
+			int target = sc.nextInt();
+			
+			
+		}
+		
+		sc.close();
+		
+	}
+	
+	int cal(Buliding node, Buliding target) {
+		
+		if(node == target) {
+			return node.time;
+		}		
+		else {			
+			if(node.lastBulid.isEmpty()) {
+				return 0;
+			}
+			else {				
+				for(int i = 0; i < node.lastBulid.size() ; i++) {
+									
+				}				
+			}
+		}
+		
+		return 0;
+	}
+	
+}
+
+class Buliding{
+	
+	int time = 0;
+	int sumTime = 0;
+	
+	ArrayList<Integer> preBulid = new ArrayList<Integer>();
+	ArrayList<Integer> lastBulid = new ArrayList<Integer>();
+	
+	
+	
+}

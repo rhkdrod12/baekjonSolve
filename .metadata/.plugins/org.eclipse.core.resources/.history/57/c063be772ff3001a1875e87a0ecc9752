@@ -1,0 +1,39 @@
+package programmers;
+
+import java.util.PriorityQueue;
+
+public class diskController {
+	public static void main(String[] args) {
+
+		int jobs[][] = {{0,3},{4,9},{6,6}};
+		
+		new diskCtlSoultion().solution(jobs);
+	}
+}
+
+class diskCtlSoultion{
+	public int solution(int[][] jobs) {
+
+		int answer =  jobs[0][1];
+		int finExec = jobs[0][1];
+
+		PriorityQueue<int[]> readyQu = new PriorityQueue<int[]>((a,b)->((a[1] - a[0]) - (b[1] - b[0])));
+		PriorityQueue<int[]> waitQu = new PriorityQueue<int[]>((a,b)->(a[0] - b[0]));
+
+		//		{{0,3},{4,9},{6,6}};
+		
+		for(int i = 1 ; i < jobs.length; i++) {
+			waitQu.add(jobs[i]);
+		}
+
+		while(!waitQu.isEmpty()) {
+			
+			
+			
+		}
+		System.out.println(answer);
+		return answer/3;
+	}
+
+
+}

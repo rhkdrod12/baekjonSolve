@@ -1,0 +1,15 @@
+import java.util.ArrayList;
+
+public class Node {
+	
+	ArrayList<Node> node;
+	int value;
+	
+	void setNode(Node node){
+		this.node.add(node);
+	}
+	
+	void setValue(int value) {
+		this.value = value;
+	}	
+}

@@ -1,0 +1,17 @@
+package programmersTest;
+
+public class Level3 {
+	public static void main(String[] args) {
+		
+		String[] operations = {{"I 16"},{"D 1"}};
+		
+		System.out.println(new Level3Solution().solution(operations));
+	}
+}
+
+class Level3Solution {
+    public int[] solution(String[] operations) {
+        int[] answer = {};
+        return answer;
+    }
+}

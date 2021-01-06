@@ -1,0 +1,26 @@
+package programmers;
+
+import java.util.PriorityQueue;
+
+public class diskController {
+	public static void main(String[] args) {
+
+		int jobs[][] = {{0,3},{1,9},{2,6}};
+		
+		new diskCtlSoultion().solution(jobs);
+	}
+}
+
+class diskCtlSoultion{
+	public int solution(int[][] jobs) {
+		int answer = 0;
+		
+		PriorityQueue<Integer> pqu = new PriorityQueue<Integer>();
+		
+		
+		PriorityQueue<Integer[]> pqu2 = new PriorityQueue<Integer[]>((a,b)->(a[0] - b[0]));
+		
+		
+		return answer;
+	}
+}

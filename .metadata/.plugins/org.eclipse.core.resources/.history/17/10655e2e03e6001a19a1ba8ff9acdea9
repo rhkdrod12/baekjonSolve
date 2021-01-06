@@ -1,0 +1,133 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+
+public class Main {
+
+	static int t;
+	static int n, m;
+	
+	static boolean	sitMap[][];   
+	static boolean[] aMap;
+	static boolean[] bMap;
+	
+	static int odd;
+	static int even;
+	
+	static int oddMax;
+	static int evenMax;
+	
+	static ArrayList<Integer>[] aEdgeLine;
+	
+	final static int[] rowEdgeLine = {-1,0,1,-1,1};
+	final static int[] columEdgeLine = {-1,-1,-1,1,1,1};
+	
+	public static void main(String[] args) {
+		
+	}
+	public static void solve() {
+		/*
+		 * t : 테스트케이스
+		 * n : 세로길이
+		 * m : 가로길이
+		 * . : 앉을 수 있는 자리
+		 * x : 앉을 수 없는 자리
+		 * 
+		 */
+		
+		Scanner sc = new Scanner(System.in);
+		n = sc.nextInt();
+		m = sc.nextInt();
+		
+		oddMax = (m/2+m%2)*n;
+		evenMax = (m/2)*n;
+		aEdgeLine = new ArrayList[oddMax];
+		
+		//기본값 셋팅
+		sitMap = new boolean[n][];
+		aMap = new boolean[oddMax];
+		bMap = new boolean[evenMax];
+		
+		//배치 가능, 불가능에 따라 false, true로 입력
+		for(int i = 0 ; i < n ; i++) {
+			sitMap[i] = bitmasking(sc.next());
+		}
+	}
+	public static void bipartiteMatching()
+	{
+		
+		//노드번호로 변경
+		odd = even = 0;
+		for(int i = 0 ; i < n ; i++) {
+			for(int j = 0 ; j < m ; j++) {
+				if(i%2 != 0) {
+					aEdgeLine[odd] = new ArrayList<Integer>();
+					aMap[odd] = sitMap[i][j];
+					odd++;
+				}
+				else {
+					bMap[even] = sitMap[i][j];
+					even++;
+				}
+			}
+		}
+		
+		// 간선매핑
+		// a나 b나 연결은 한쪽만 가지고 있으면 됨, a에 매핑되는 b를 찾는다고 하면
+		// i 는 열
+		// j 는 행
+		// 간선을 형성하는건
+		// 노드의 좌표가 i, j라고 할 때 
+		// i-1	j-1		i-1	j+1
+		// i 	j-1		i	j+1
+		// i+1	j-1		i+1	j+1
+		// 의 간선 구조를 가짐
+		
+		for(int i = 0 ; i < n ; i++) {
+			for(int j = 0; j < m ; j++) {
+				
+			}
+		}
+		
+		
+		
+		
+		
+		
+		
+		sc.close();
+	}
+	
+	public static boolean[] bitmasking(String str) {
+		boolean[] temp = new boolean[m];
+		
+		for(int i = 0 ; i < m ; i++) {
+			if(str.charAt(i) == 'x') temp[i] = true;
+			else temp[i] = false;
+		}
+		return temp;
+	}
+		
+	
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

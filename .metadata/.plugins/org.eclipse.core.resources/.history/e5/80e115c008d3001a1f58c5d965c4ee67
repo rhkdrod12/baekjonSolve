@@ -1,0 +1,36 @@
+import java.util.ArrayList;
+
+public class Node {
+	
+	ArrayList<Node> node;
+	int value;
+	int total;
+	
+	public Node() {
+		// TODO Auto-generated constructor stub
+	}
+	
+	public Node(int value) {
+		this.value = value;
+	}
+	
+	public Node(int value, int total) {
+		this.value = value;
+		this.total= total;
+	}
+	
+	void setNode(Node node){
+		this.node.add(node);
+	}
+	
+	void setNode(Node node, int total){
+		this.node.add(node);
+		this.total= total;
+		
+	}
+	
+	void setValue(int value) {
+		this.value = value;
+	}	
+}
+

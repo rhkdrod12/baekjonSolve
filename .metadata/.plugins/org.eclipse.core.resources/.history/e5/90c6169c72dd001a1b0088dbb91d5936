@@ -1,0 +1,64 @@
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+}
+
+
+class quest{
+	
+	int testCase;
+	int dotNum;
+	int dot[][];
+		
+	public void input() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		//테스트케이스 입력
+		testCase = sc.nextInt();
+		
+		for(int test = 0 ; test < testCase ; test++) {
+			
+			//점의 개수 입력(짝수만 가능하도록)
+			while(true) {
+				dotNum = sc.nextInt();
+				if(dotNum%2 == 0 && dotNum > 0 && dotNum <= 20) {
+					break;
+				}
+			}
+			
+			dot = new int[dotNum][2];		
+			
+			//점 좌표 입력
+			for(int i = 0; i < dotNum ; i++) {
+				for(int j = 0 ; j < 2 ; j++) {
+					dot[i][j] = sc.nextInt();
+					if(Math.abs(dot[i][j]) >= 100000) j--;
+				}				
+			}			
+		}		
+		sc.close();
+	}
+	
+	public void solve() {
+		
+		double vect[] = new double[dotNum/2];
+		
+		for(int i = 0; i < dotNum ; i++) {
+			for(int j = 1; j < dotNum ; j++) {
+				if(j == i) continue;
+				
+			}			
+		}
+		
+	}
+	
+	
+	
+}

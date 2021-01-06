@@ -1,0 +1,57 @@
+package programmers;
+
+import java.util.Arrays;
+import java.util.PriorityQueue;
+
+public class diskController {
+	public static void main(String[] args) {
+
+		int jobs[][] = {{0,3},{1,9},{2,6}};
+		
+		new diskCtlSoultion().solution(jobs);
+	}
+}
+
+class diskCtlSoultion{
+	public int solution(int[][] jobs) {
+		
+		int answer =  jobs[0][1];
+		int finExec = jobs[0][1];
+		
+		PriorityQueue<int[]> readyQu = new PriorityQueue<int[]>((a,b)->((finExec - a[0] + a[1]) - (finExec - b[0] + b[1])));
+		
+		PriorityQueue<int[]> waitQu;  
+		
+		
+		waitQu = new PriorityQueue<int[]>((a,b)->(a[0] - b[0]));
+		
+		for(int i = 1 ; i < jobs.length; i++) {
+			waitQu.add(jobs[i]);
+		}
+		
+		while(!waitQu.isEmpty()) {
+			int[] temp = waitQu.poll();
+			
+			if(temp[1] < finExec) {
+				readyQu.add(temp);
+			}
+			else {
+				int sTemp = readyQu.poll();
+				answer +=  finExec - sTemp[0] + sTemp[1];
+				finExec += 
+				
+				waitQu.add(temp);
+			}
+		}
+	
+	
+	
+		
+		if(jobs[i][0] <= finExec) waitQu.add(jobs[i]);
+		System.out.println(Arrays.toString(waitQu.poll()));
+		
+		
+		
+		return answer;
+	}
+}

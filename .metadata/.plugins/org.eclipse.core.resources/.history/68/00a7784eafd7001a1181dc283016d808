@@ -1,0 +1,130 @@
+import java.util.Scanner;
+
+public class StateCal {
+	
+int testCase;
+	
+	int area;
+	int areaEnemy[][];
+		
+	int speicalForce;		
+	
+	public void input() {
+		Scanner	sc;		
+		
+		sc = new Scanner(System.in);
+		
+		System.out.print("테스트 케이스 입력: ");
+		testCase = sc.nextInt();
+		
+		System.out.print("구역 입력, 특수 소대원 수 입력: ");
+		area = sc.nextInt();
+		speicalForce = sc.nextInt();
+				
+		areaEnemy = new int[2][area];
+		
+		for(int i = 0; i<2 ; i++) {
+			
+			System.out.printf("%d 구역 적의 수 입력: ", i+1);
+			for(int j = 0; j<area ; j++) {
+				areaEnemy[i][j] = sc.nextInt();
+			}			
+		}
+		
+		System.out.println(testCase);
+		System.out.println(area + " " + speicalForce);
+		
+		for(int i = 0; i<2 ; i++) {
+			for(int j = 0; j<area ; j++) {
+				System.out.print(areaEnemy[i][j] + " ");
+			}			
+			System.out.println(" ");
+		}				
+		sc.close();		
+		//입력 완료	
+	}
+	
+	
+	public int[] stateCal(int a, int b, int c, int d) {
+		
+		 /*
+		 * 2구역 침투 경우의 수 
+		 * s0 : 겹치는 경우가 없는 경우	-> 어차피 0이고 무조건 발생 가능하므로 반환필요 없을 것으로 보임
+		 * s1 : 1 , 2
+		 * s2 : 2 , 3
+		 * s3 : 3 , 4
+		 * s4 : 4 , 1
+		 * s5 : (1, 2), (3, 4)
+		 * s6 : (4, 1), (2, 3)
+		 */
+		
+		int s[] = new int[5];
+		
+		s[0] = a+b<=100?1:0;					//s1
+		s[1] = b+c<=100?1:0;					//s2
+		s[2] = c+d<=100?1:0;					//s3
+		s[3] = d+a<=100?1:0;					//s4
+		s[4] = (a+b<=100 && b+c<=100)?1:0;		//s5
+		s[5] = (b+c<=100 && d+a<=100)?1:0;		//s6
+		
+		return s;
+	}
+	
+	public void dp(int num, int[] s) {
+		
+		if(s[1] == 1) {
+			
+		}
+		else if(s[2] == 1) {
+			
+		}
+		else if(s[3] == 1) {
+		
+		}
+		else if(s[4] == 1) {
+			
+		}
+		else if(s[5] == 1) {
+			
+		}
+		
+		int val = arr(s);			
+		// s1,s2,s3,s4,s5,s6
+		if(val == 1111111) {
+			
+		}
+		else if(val == 1011000) {
+			
+		}
+		else if(val == 1010000) {
+			
+		}
+		else if(val == 1110000) {
+			
+		}
+		else if(val == 1111111) {
+			
+		}
+		else if(val == 1010000) {
+			
+		}
+		else if(val == 1010000) {
+			
+		}
+				
+	}
+	
+	public int arr(int[] num) {
+		
+		int a = 1;
+		
+		for(int i = 0; i< num.length;i++) {
+			a *= 10;
+			a += num[i];
+		}		
+		
+		return a;
+	}
+	
+		
+}

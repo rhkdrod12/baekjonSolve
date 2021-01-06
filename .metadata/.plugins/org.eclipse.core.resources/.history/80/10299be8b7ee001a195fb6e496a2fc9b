@@ -1,0 +1,53 @@
+package test;
+
+import java.util.*;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
+
+import static java.util.stream.Collectors.*;
+
+public class test {
+	public static void main(String[] args) {
+
+		String[][] arr = {{"yellow_hat", "headgear"}, {"blue_sunglasses", "eyewear"}, {"green_turban", "headgear"}};
+		
+		System.out.println(solution2(arr));
+		
+	}
+
+	public static int solution(String[][] clothes) {
+        
+        int clothSize = clothes.length;
+        Map<String, Integer> items = new HashMap<String, Integer>();
+        
+        for(int i = 0 ; i < clothSize ; i++) {
+        	items.put(clothes[i][1], items.getOrDefault(clothes[i][1], 0) + 1);
+        }
+        
+//      System.out.printf("arr: %s size: %d\n",Arrays.toString(arr) ,arr.length);
+        
+        int temp = 1;
+        for(int val : items.values()) {
+        	temp*=(val+1);
+        }
+       
+        
+        return temp -1;
+    }
+	public static int solution2(String[][] clothes) {
+		
+		int num = Arrays.stream(clothes)
+				.collect(Collectors.groupingBy(arr->arr[1], mapping(arr->arr[0], counting())))
+				.values()
+				.stream()
+				.collect(reducing(1L, (x,y)->x*(y+1))).intValue() - 1;
+		
+		return num;
+	}
+	
+	
+
+}

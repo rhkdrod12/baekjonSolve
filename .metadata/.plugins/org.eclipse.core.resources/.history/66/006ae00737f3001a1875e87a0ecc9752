@@ -1,0 +1,57 @@
+package programmers;
+
+import java.util.PriorityQueue;
+
+public class diskController {
+	public static void main(String[] args) {
+
+		int jobs[][] = {{0,3},{4,9},{6,6}};
+		
+		new diskCtlSoultion().solution(jobs);
+	}
+}
+
+class diskCtlSoultion{
+	public int solution(int[][] jobs) {
+
+		int answer =  jobs[0][1];
+		int finExec = jobs[0][1];
+
+		PriorityQueue<int[]> readyQueue = new PriorityQueue<int[]>((a,b)->((a[1] - a[0]) - (b[1] - b[0])));
+		PriorityQueue<int[]> waitQueue = new PriorityQueue<int[]>((a,b)->(a[0] - b[0]));
+
+		//	{{0,3},{4,9},{6,6}};
+		//  요청시간부터 걸리는 시간은
+		//  요청부터 종료까지 걸린 시간 : 진행시간(finExec) + 작업시간(jobs[][1])- 요청시간(jobs[][0])
+		//	진행시간을 어떻게 구하는지에 따라 걸졍되겠네
+		//  처음은 이미 진행한 것으로 봤을 경우에 
+		//  진행 중이 프로세스가 종료전에 요청이 있으면 래디큐에 넣고 없다면 바로 다음 것을 실행
+		
+		for(int i = 1 ; i < jobs.length; i++) {
+			waitQueue.add(jobs[i]);
+		}
+
+		while(!waitQueue.isEmpty()) {
+			while(!waitQueue.isEmpty() && waitQueue.peek()[0] <= finExec) {
+				readyQueue.add(waitQueue.poll());
+			}
+			
+			//래디큐가 비어있으면 바로 다음 프로세스를 바로 실행
+			if(readyQueue.isEmpty()) {
+				int[][] temp = waitQueue.poll();
+				readyQueue.add(temp);
+				finExec = 
+			}
+			else {
+				
+			}
+			
+			
+			
+		}
+		System.out.println(answer);
+		return answer/3;
+	}
+
+
+}

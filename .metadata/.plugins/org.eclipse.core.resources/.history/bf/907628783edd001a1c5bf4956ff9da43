@@ -1,0 +1,43 @@
+import java.util.Scanner;
+
+public class Main {
+	
+	public static void main(String[] args) {
+		
+		
+		
+	}
+}
+
+
+class quest{
+	
+	int testCase;
+	int dotNum;
+	int dot[][];
+	
+	public void solve() {
+		
+		Scanner sc = new Scanner(System.in);
+		
+		testCase = sc.nextInt();
+		
+		for(int test = 0 ; test < testCase ; test++) {
+			
+			
+			
+			
+			
+		}
+		
+		
+		
+		
+		
+		
+		sc.close();
+	}
+	
+	
+	
+}

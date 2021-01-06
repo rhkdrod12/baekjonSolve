@@ -1,0 +1,119 @@
+import java.util.ArrayList;
+import java.util.Scanner;
+
+import Q1006.main.Node;
+
+public class Quest {
+	
+	
+	int testCase;
+	
+	int area;
+	int areaEnemy[][];
+		
+	int speicalForce;		
+	
+	void input() {
+		Scanner	sc;		
+		
+		sc = new Scanner(System.in);
+		
+		System.out.print("테스트 케이스 입력: ");
+		testCase = sc.nextInt();
+		
+		System.out.print("구역 입력, 특수 소대원 수 입력: ");
+		area = sc.nextInt();
+		speicalForce = sc.nextInt();
+				
+		areaEnemy = new int[2][area];
+		
+		for(int i = 0; i<2 ; i++) {
+			
+			System.out.printf("%d 구역 적의 수 입력: ", i+1);
+			for(int j = 0; j<area ; j++) {
+				areaEnemy[i][j] = sc.nextInt();
+			}			
+		}
+		
+		System.out.println(testCase);
+		System.out.println(area + " " + speicalForce);
+		
+		for(int i = 0; i<2 ; i++) {
+			for(int j = 0; j<area ; j++) {
+				System.out.print(areaEnemy[i][j] + " ");
+			}			
+			System.out.println(" ");
+		}				
+		sc.close();		
+		//입력 완료	
+	}
+	
+	
+	void cal() {
+		
+		ArrayList<int[]> sfPlans = new ArrayList<int[]>();		
+		for(int i =0 ; i < area ; i++) {
+			sfPlans.add(ableLocates(areaEnemy[0][i], areaEnemy[0][i+1], areaEnemy[1][i+1], areaEnemy[1][i], speicalForce));						
+		}
+		
+		Node node = new Node();
+		
+		ArrayList<Node> nodes = new ArrayList<Node>();
+			
+		int tmp[] = sfPlans.get(0);
+		
+		//나올 수 있는 모든 경우의 수
+		
+		//위로 한개
+		if(tmp[0] == 0 && tmp[1] > 0) {
+			nodes.add(new Node(2));
+		}		
+		//아래로 한개
+		else if(tmp[0] > 0 && tmp[1] == 0) {
+			plans[1].add(1);
+		}
+		//가로로 두개
+		else if(tmp[0] > 0 && tmp[1] > 0) {
+			plans[2].add(2);
+		}		
+		//세로로 두개		
+		else if(tmp[2] > 0 && tmp[3] > 0) {
+			plans[3].add(2);
+		}		
+		//왼쪽으로 한개
+		else if(tmp[2] > 0 && tmp[3] == 0) {
+			plans[4].add(1);
+		}
+		//오른쪽으로 한개
+		else if(tmp[2] == 0 && tmp[3] > 0) {
+			plans[5].add(1);
+		}		
+		//비어있을 경우
+		else if(tmp[0] == 0 && tmp[1] == 0 && tmp[2] == 0 && tmp[3] == 0 ) {
+			plans[6].add(0);
+		}
+						
+			//회귀를 사용할 수 밖에 없나..
+			
+		
+		
+		
+		
+	}
+	
+	
+	
+	int[] ableLocates(int a, int b, int c, int d, int w) {
+		
+		int state[] = new int[4];
+		
+		state[0] = a+b<=w?1:0;
+		state[1] = d+c<=w?2:0;	
+		state[2] = a+d<=w?3:0;
+		state[3] = c+b<=w?4:0;				
+
+		return state;		
+	}
+	
+	
+}

@@ -1,0 +1,23 @@
+package test;
+
+import java.io.IOException;
+import java.util.ArrayList;
+
+public class test {
+	public static void main(String[] args) throws IOException {
+		
+		ArrayList<Integer> sqrt = new ArrayList<Integer>();
+		
+		double a = 1000000000000d;
+		double b =  999999900000d;
+						
+		System.out.println(a/b);
+		System.out.println((int)(a/b));
+		
+		System.out.println(a%b);
+		System.out.println((int)(a%b));
+		
+		System.out.println((int)(a/b)*a);
+	
+	}
+}

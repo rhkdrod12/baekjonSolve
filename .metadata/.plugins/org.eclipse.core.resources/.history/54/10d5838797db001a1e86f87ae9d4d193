@@ -1,0 +1,18 @@
+import java.util.ArrayList;
+
+public class State {
+	int val;
+	int total;
+	ArrayList<State> next = new ArrayList<State>();
+	
+	public State(int val) {
+		// TODO Auto-generated constructor stub
+		this.val = val;	
+		this.total = 0;
+	}
+	public State(int val, int total) {
+		// TODO Auto-generated constructor stub
+		this.val = val;		
+		this.total = total;
+	}	
+}

@@ -1,0 +1,15 @@
+import com.sun.org.apache.xalan.internal.xsltc.compiler.Pattern;
+
+public class Main {
+	
+	static Pattern pt;
+	
+	
+	public static void main(String[] args) {
+		
+		
+		
+		
+		
+	}
+}
